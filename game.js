@@ -42,3 +42,31 @@ function makeGuess(category) {
     setNewQuestion();
   }, 1000);
 }
+
+function makeGuess(category) {
+  let currentName = document.getElementById("question").textContent;
+  let correctCategory = pokemon.includes(currentName) ? "pokemon" :
+                        linux.includes(currentName) ? "linux" :
+                        starwars.includes(currentName) ? "starwars" :
+                        "baseball";
+
+  if (category === correctCategory) {
+    document.getElementById("result").textContent = "✅ Correct!";
+    score++;
+
+    // Check if Sicnarf Mode should activate
+    if (currentName === "Sicnarf Loopstok") {
+      activateSicnarfMode();
+    }
+  } else {
+    document.getElementById("result").textContent = "❌ Incorrect!";
+  }
+
+  document.getElementById("score").textContent = `Score: ${score}`;
+
+  setTimeout(() => {
+    document.getElementById("result").textContent = "";
+    setNewQuestion();
+  }, 1000);
+}
+
