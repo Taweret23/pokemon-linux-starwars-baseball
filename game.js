@@ -50,9 +50,45 @@ function makeGuess(category) {
 }
 
 // ✅ Add the activateSicnarfMode function (if not already in your HTML)
+// In game.js, add or update this function:
 function activateSicnarfMode() {
+  // Change the background
   document.body.style.backgroundImage = "url('sicnarf.jpeg')";
   document.body.style.backgroundSize = "cover";
   document.body.style.backgroundPosition = "center";
-  document.getElementById("result").textContent = "🔥 SICNARF MODE UNLOCKED 🔥";
+  
+  // Show the notification
+  let notification = document.getElementById("sicnarf-notification");
+  notification.style.display = "block";
+  
+  // Trigger confetti after a brief delay
+  setTimeout(() => {
+    confetti({ particleCount: 300, spread: 120, origin: { y: 0.6 } });
+  }, 500);
+  
+  // Add Sicnarf Loopstok button if it doesn't already exist
+  if (!document.getElementById("sicnarf-button")) {
+    let sicnarfButton = document.createElement("button");
+    sicnarfButton.id = "sicnarf-button";
+    sicnarfButton.textContent = "Sicnarf Loopstok";
+    sicnarfButton.style.backgroundColor = "red";
+    sicnarfButton.style.color = "yellow";
+    sicnarfButton.style.fontSize = "1.2em";
+    sicnarfButton.style.marginTop = "10px";
+    sicnarfButton.onclick = function() {
+      let randomOutcome = Math.random() > 0.5 ? "✅ SICNARF!" : "❌ SICNARF!";
+      document.getElementById("result").textContent = randomOutcome;
+      if (randomOutcome.includes("✅")) {
+        score++;
+      }
+      document.getElementById("score").textContent = `Score: ${score}`;
+      
+      setTimeout(() => {
+        document.getElementById("result").textContent = "";
+        setNewQuestion();
+      }, 1000);
+    };
+    document.getElementById("buttons").appendChild(sicnarfButton);
+  }
 }
+
