@@ -32,29 +32,8 @@ function makeGuess(category) {
   if (category === correctCategory) {
     document.getElementById("result").textContent = "✅ Correct!";
     score++;
-  } else {
-    document.getElementById("result").textContent = "❌ Incorrect!";
-  }
-  document.getElementById("score").textContent = `Score: ${score}`;
 
-  setTimeout(() => {
-    document.getElementById("result").textContent = "";
-    setNewQuestion();
-  }, 1000);
-}
-
-function makeGuess(category) {
-  let currentName = document.getElementById("question").textContent;
-  let correctCategory = pokemon.includes(currentName) ? "pokemon" :
-                        linux.includes(currentName) ? "linux" :
-                        starwars.includes(currentName) ? "starwars" :
-                        "baseball";
-
-  if (category === correctCategory) {
-    document.getElementById("result").textContent = "✅ Correct!";
-    score++;
-
-    // Check if Sicnarf Mode should activate
+    // ✅ Check if Sicnarf Mode should activate
     if (currentName === "Sicnarf Loopstok") {
       activateSicnarfMode();
     }
@@ -70,3 +49,10 @@ function makeGuess(category) {
   }, 1000);
 }
 
+// ✅ Add the activateSicnarfMode function (if not already in your HTML)
+function activateSicnarfMode() {
+  document.body.style.backgroundImage = "url('sicnarf.jpeg')";
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  document.getElementById("result").textContent = "🔥 SICNARF MODE UNLOCKED 🔥";
+}
