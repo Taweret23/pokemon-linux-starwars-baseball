@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokémon, Linux Distro, Star Wars, or Baseball?</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.1"></script>
   <script src="game.js" defer></script>
 </head>
 <body>
   <div id="game-container">
     <h1>Pokémon, Linux Distro, Star Wars, or Baseball?</h1>
+    
+    <div id="sicnarf-notification" style="display: none; font-size: 2em; font-weight: bold; color: red; text-align: center; animation: flash 1s infinite; margin-bottom: 20px;">
+      SICNARF LOOPSTOK MODE UNLOCKED
+    </div>
+    
     <button onclick="startGame()">Start Game</button>
     
     <div id="game" style="display: none;">
@@ -24,13 +30,48 @@
       <p id="score">Score: 0</p>
     </div>
   </div>
+  
   <script>
     function activateSicnarfMode() {
       document.body.style.backgroundImage = "url('sicnarf.jpeg')";
       document.body.style.backgroundSize = "cover";
       document.body.style.backgroundPosition = "center";
-      document.getElementById("result").textContent = "🔥 SICNARF MODE UNLOCKED 🔥";
+      document.getElementById("sicnarf-notification").style.display = "block";
+      
+      // Confetti effect
+      confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
+      
+      // Add Sicnarf Loopstok button if not already there
+      if (!document.getElementById("sicnarf-button")) {
+        let sicnarfButton = document.createElement("button");
+        sicnarfButton.id = "sicnarf-button";
+        sicnarfButton.textContent = "Sicnarf Loopstok";
+        sicnarfButton.style.backgroundColor = "red";
+        sicnarfButton.style.color = "yellow";
+        sicnarfButton.onclick = function() {
+          let randomOutcome = Math.random() > 0.5 ? "✅ SICNARF!" : "❌ SICNARF!";
+          document.getElementById("result").textContent = randomOutcome;
+          if (randomOutcome.includes("✅")) {
+            score++;
+          }
+          document.getElementById("score").textContent = `Score: ${score}`;
+          
+          setTimeout(() => {
+            document.getElementById("result").textContent = "";
+            setNewQuestion();
+          }, 1000);
+        };
+        document.getElementById("buttons").appendChild(sicnarfButton);
+      }
     }
   </script>
+  
+  <style>
+    @keyframes flash {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
 </body>
 </html>
