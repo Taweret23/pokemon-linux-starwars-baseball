@@ -1,7 +1,7 @@
 const pokemon = ["Darmanitan", "Frosmoth", "Dracovish", "Crabominable", "Togedemaru", "Eldegoss", "Morpeko", "Tatsugiri", "Turtonator", "Coalossal", "Stonjourner", "Centiskorch", "Gourgeist", "Runerigus", "Minior", "Bruxish", "Komala", "Clawitzer", "Druddigon", "Falinks"];
 const linux = ["Debian", "Arch", "Manjaro", "Gentoo", "Tails", "Solus", "Slackware", "Zorin", "Endeavour", "Void", "Bodhi", "Alpine", "Sabayon", "Mageia", "Nix", "Feren", "Trisquel", "Siduction", "KaOS", "Hyperbola"];
 const starwars = ["Therm Scissorpunch", "Elan Sleazebaggano", "Oppo Rancisis", "Jaxxon", "Toryn Farr", "Ransolm Casterfo", "Vober Dand", "Bollux", "Shara Bey", "Bazine Netal", "Sio Bibble", "Bolla Ropal", "Quarsh Panaka", "Rako Hardeen", "Hurst Romodi", "Tasu Leech", "Maximilian Veers", "Garven Dreis", "Tion Medon", "Bodhi Rook"];
-const baseball = ["Eppa Rixey", "Kimera Bartee", "Simmy Murch", "Bitsy Mott", "Rugger Ardizoia", "Porfi Altamirano", "Callix Crabbe", "Jair Jurrjens", "Ping Bodie", "Yohendrick Pinango", "Smead Jolley", "Shags Horan", "Subby Byas", "Rocky Cherry", "Tot Pressnell", "Admiral Schlei", "Sibby Sisti", "Dal Maxvill", "Stubby Clapp", "Biff Pocoroba"];
+const baseball = ["Sicnarf Loopstok", "Eppa Rixey", "Kimera Bartee", "Simmy Murch", "Bitsy Mott", "Rugger Ardizoia", "Porfi Altamirano", "Callix Crabbe", "Jair Jurrjens", "Ping Bodie", "Yohendrick Pinango", "Smead Jolley", "Shags Horan", "Subby Byas", "Rocky Cherry", "Tot Pressnell", "Admiral Schlei", "Sibby Sisti", "Dal Maxvill", "Stubby Clapp", "Biff Pocoroba"];
 
 let namePool = [];
 let score = 0;
