@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokémon, Linux Distro, Star Wars, or Baseball?</title>
   <link rel="stylesheet" href="style.css">
-<script src="game.js" defer></script>
-
+  <script src="game.js" defer></script>
 </head>
 <body>
   <div id="game-container">
@@ -25,5 +24,13 @@
       <p id="score">Score: 0</p>
     </div>
   </div>
+  <script>
+    function activateSicnarfMode() {
+      document.body.style.backgroundImage = "url('sicnarf.jpeg')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.getElementById("result").textContent = "🔥 SICNARF MODE UNLOCKED 🔥";
+    }
+  </script>
 </body>
 </html>
