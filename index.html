@@ -36,10 +36,14 @@
       document.body.style.backgroundImage = "url('sicnarf.jpeg')";
       document.body.style.backgroundSize = "cover";
       document.body.style.backgroundPosition = "center";
-      document.getElementById("sicnarf-notification").style.display = "block";
+      
+      let notification = document.getElementById("sicnarf-notification");
+      notification.style.display = "block";
       
       // Confetti effect
-      confetti({ particleCount: 200, spread: 90, origin: { y: 0.6 } });
+      setTimeout(() => {
+        confetti({ particleCount: 300, spread: 120, origin: { y: 0.6 } });
+      }, 500);
       
       // Add Sicnarf Loopstok button if not already there
       if (!document.getElementById("sicnarf-button")) {
@@ -48,6 +52,8 @@
         sicnarfButton.textContent = "Sicnarf Loopstok";
         sicnarfButton.style.backgroundColor = "red";
         sicnarfButton.style.color = "yellow";
+        sicnarfButton.style.fontSize = "1.2em";
+        sicnarfButton.style.marginTop = "10px";
         sicnarfButton.onclick = function() {
           let randomOutcome = Math.random() > 0.5 ? "✅ SICNARF!" : "❌ SICNARF!";
           document.getElementById("result").textContent = randomOutcome;
